@@ -1,0 +1,14 @@
+<!-- Enter Login id : <input type="text" [(ngModel)]="loginId"><br/>
+Enter Login id : <input type="password" [(ngModel)]="password"><br/>
+<button (click)="loginSubmit()">Login</button> -->
+
+<form #loginForm="ngForm" class="form-group" (ngSubmit)="loginSubmit2(loginForm.value)" novalidate>
+Enter Login id : <input type="text" class="form-control" ngModel name="loginId" #loginId="ngModel" required minlength="4" maxlength="12"><br/>
+Enter Login id : <input type="password" class="form-control" ngModel name="password" #password="ngModel" required minlength="4" maxlength="12"><br/>
+<button [disabled]=loginForm.invalid>Login</button>
+</form>
+
+<div *ngIf="loginId.errors?.['required'] && loginId.touched">Please Enter Login Id</div>
+<div *ngIf="loginId.errors?.['minlength'] && loginId.touched">Enter Min 6 Chars</div>
+<div *ngIf="password.errors?.['required'] && password.touched">Please Enter Password</div>
+<div *ngIf="password.errors?.['minlength'] && password.touched">Enter Min 6 Chars</div>

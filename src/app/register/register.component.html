@@ -1,0 +1,12 @@
+<form #regForm="ngForm"(ngSubmit)="submitRegForm(regForm.value)">
+    Enter employee Name : <input type="empName" #loginId=ngModel name="empName"ngModel><br/>
+    Enter Salary : <input type="text" #salary=ngModel name="salary"ngModel><br/>
+    Enter Gender : <input type="text" #gender=ngModel name="gender"ngModel><br/>
+    Enter Date Of Join : <input type="date" #doj=ngModel name="doj"ngModel><br/>
+    Enter Login Id : <input type="text" #loginId=ngModel name="loginId"ngModel><br/>
+    Enter Password : <input type="password" #password=ngModel name="password"ngModel><br/>
+    Select Country : <select name="country" ngModel >
+        <option value={{country.alpha2Code}}  *ngFor="let country of countriesList">{{country.name}}</option>
+    </select>
+    <button [disabled]="!regForm.valid">Register</button>
+</form>

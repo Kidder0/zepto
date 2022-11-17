@@ -1,0 +1,30 @@
+<h1 class="alignment">Employee Details</h1>
+<table class="table table-bordered table-hover table-condensed table-striped">
+    <thead>
+        <tr class="bg-info text-white">
+            <th>Employee Id</th>
+            <th>Name</th>
+            <th>Salary</th>
+            <th>Gender</th>
+            <th>Date Of Join</th>
+            <th>email</th>
+            <th>password</th>
+            <th>Experience</th>
+            <th colspan="2" style="text-align:center">Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let e of employees1;">
+            <td>{{e.empId}}</td>
+            <td>{{e.empName | gender: e.gender | uppercase }}</td>
+            <td>{{e.salary | currency : 'USD' }}</td>
+            <td>{{e.gender | lowercase }}</td>
+            <td>{{e.doj |date: 'dd-MMMM-yyyy'}}</td>
+            <td>{{e.loginId }}</td>
+            <td>{{e.password}}</td>
+            <td>{{e.doj | exp}}</td>
+            <td><button  >Edit</button></td>
+            <td><button (click)="delete(e.empId)">Delete</button></td>
+        </tr>
+    </tbody>
+</table>

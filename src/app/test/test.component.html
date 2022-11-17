@@ -1,0 +1,17 @@
+<h1>Details of Customer </h1>
+Ur Name : {{name}}<br/>
+Ur Age : {{age}} <br/>
+Ur Salary : {{salary}} <br/>
+Are U Married : {{marritalStatus}}
+<h3>Ur Address is : </h3>
+Door No: {{address.doorNo}}<br/>
+Street : {{address.street}}<br/>
+City : {{address.city}}<br/>
+<h3>Hobbies</h3>
+<ul>
+    <li *ngFor="let hobby of hobbies">{{hobby}}</li>
+</ul>
+Enter message : <input type="text" [(ngModel)]="message">
+{{message}}
+<BR/>
+<button (click)="showMessage()">Click here..</button>

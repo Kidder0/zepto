@@ -1,0 +1,6 @@
+<form #regForm="ngForm"(ngSubmit)="submitRegForm(regForm.value)">
+    Enter Student Name : <input type="text" name="name" ngModel><br/>
+    Enter Course : <input type="text"  name="course" ngModel><br/>
+    Enter Fees : <input type="text" name="fees" ngModel><br/>
+    <button [disabled]="!regForm.valid">Register</button>
+</form>
